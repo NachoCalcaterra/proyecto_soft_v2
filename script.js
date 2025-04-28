@@ -12,7 +12,7 @@ function renderPlayers() {
         playerCard.className = 'card';
         playerCard.innerHTML = `
             <div class="card-body">
-                <h5 class="card-title">${player.name}</h5>
+                <p class="card-title"><strong>Nombre:</strong> ${player.name}</p>
                 <p class="card-text"><strong>Posición:</strong> ${player.position}</p>
                 <p class="card-text"><strong>Edad:</strong> ${player.age}</p>
                 <p class="card-text"><strong>Número de Camiseta:</strong> ${player.number}</p>
@@ -102,7 +102,7 @@ function renderIncomes() {
         incomeCard.className = 'card income-card';
         incomeCard.innerHTML = `
             <div class="card-body">
-                <h5 class="card-title">${income.description}</h5>
+              <p class="card-title"><strong>Descripcion del Ingreso:</strong> ${income.description}</p>
                 <p class="card-text"><strong>Monto:</strong> $${income.amount.toFixed(2)}</p>
                 <div class="player-actions">
                     <button class="btn btn-secondary" onclick="editIncome(${index})">Editar</button>
@@ -123,7 +123,7 @@ function renderExpenses() {
         expenseCard.className = 'card expense-card';
         expenseCard.innerHTML = `
             <div class="card-body">
-                <h5 class="card-title">${expense.description}</h5>
+                <p class="card-title"><strong>Descripcion del Gasto:</strong> ${expense.description}</p>
                 <p class="card-text"><strong>Monto:</strong> $${expense.amount.toFixed(2)}</p>
                 <div class="player-actions">
                     <button class="btn btn-secondary" onclick="editExpense(${index})">Editar</button>
@@ -250,7 +250,7 @@ function renderStaff() {
         staffCard.className = 'card staff-card';
         staffCard.innerHTML = `
             <div class="card-body">
-                <h5 class="card-title">${member.name}</h5>
+               <p class="card-text"><strong>Nombre:</strong> ${member.name}</p>
                 <p class="card-text"><strong>Cargo:</strong> ${member.position}</p>
                 <p class="card-text"><strong>Contacto:</strong> ${member.contact}</p>
                 <div class="staff-actions">
