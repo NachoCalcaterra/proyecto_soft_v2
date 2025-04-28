@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jugadores - Club Sportivo Bombal</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="sportivo.png">
+</head>
+<body class="jug">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Club Sportivo Bombal</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Inicio</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="jugadores.html">Jugadores <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="administracion_financiera.html">Administración Financiera</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="personal.html">Personal</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <h2>Jugadores del Club Sportivo Bombal</h2>
+        <div class="mt-4">
+            <h4>Agregar Jugador</h4>
+            <form id="player-form">
+                <div class="form-group">
+                    <label for="player-name">Nombre del Jugador:</label>
+                    <input type="text" class="form-control" id="player-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="player-position">Posición:</label>
+                    <input type="text" class="form-control" id="player-position" required>
+                </div>
+                <div class="form-group">
+                    <label for="player-age">Edad:</label>
+                    <input type="number" class="form-control" id="player-age" required min="16" max="40">
+                </div>
+                <div class="form-group">
+                    <label for="player-number">Número de Camiseta:</label>
+                    <input type="number" class="form-control" id="player-number" required min="1" max="99">
+                </div>
+                <button type="button" class="btn btn-primary" onclick="addPlayer()">Agregar Jugador</button>
+            </form>
+        </div>
+        <div id="player-list">
+            <h4 class="mt-4">Lista de Jugadores</h4>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+        window.onload = () => {
+            renderPlayers();
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administración Financiera - Club Sportivo Bombal</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="sportivo.png">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Club Sportivo Bombal</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="jugadores.html">Jugadores</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="administracion_financiera.html">Administración Financiera <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="personal.html">Personal</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <h2>Administración Financiera</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <form id="income-form">
+                    <div class="form-group">
+                        <label for="income-description">Descripción del Ingreso:</label>
+                        <input type="text" class="form-control" id="income-description" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="income-amount">Monto:</label>
+                        <input type="number" class="form-control" id="income-amount" required step="0.01">
+                    </div>
+                    <button type="button" class="btn btn-success" onclick="addIncome()">Agregar Ingreso</button>
+                </form>
+            </div>
+            <div class="col-md-6">
+                <form id="expense-form">
+                    <div class="form-group">
+                        <label for="expense-description">Descripción del Gasto:</label>
+                        <input type="text" class="form-control" id="expense-description" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="expense-amount">Monto:</label>
+                        <input type="number" class="form-control" id="expense-amount" required step="0.01">
+                    </div>
+                    <button type="button" class="btn btn-danger" onclick="addExpense()">Agregar Gasto</button>
+                </form>
+            </div>
+        </div>
+        <div class="mt-4">
+            <h4>Resumen Financiero</h4>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Ingresos Totales: <span id="total-income">$0.00</span></h5>
+                    <h5 class="card-title">Gastos Totales: <span id="total-expense">$0.00</span></h5>
+                    <h5 class="card-title">Balance: <span id="balance">$0.00</span></h5>
+                </div>
+            </div>
+        </div>
+        <div id="income-list" class="mt-4">
+            <h5>Ingresos</h5>
+        </div>
+        <div id="expense-list" class="mt-4">
+            <h5>Gastos</h5>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+        window.onload = () => {
+            renderFinancialSummary();
+            renderIncomes();
+            renderExpenses();
+        };
+    </script>
+</body>
+</html>

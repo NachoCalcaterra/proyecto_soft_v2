@@ -1,0 +1,35 @@
+body {
+    background: radial-gradient(rgb(248, 248, 174), rgb(61, 61, 156));
+    font-family: Arial, sans-serif;
+}
+.navbar {
+    background-color: #343a40;
+}
+.navbar-brand, .nav-link {
+    color: white !important;
+}
+.content-section {
+    margin-top: 40px;
+}
+.card {
+    margin-bottom: 20px;
+}
+.income-card {
+    border-left: 4px solid #28a745;
+}
+.expense-card {
+    border-left: 4px solid #dc3545;
+}
+.staff-card {
+    border-left: 4px solid #007bff;
+}
+.foto {
+    width: 500px;
+}
+.titulo {
+    text-align: center;
+    background: radial-gradient(rgb(248, 248, 174), rgb(61, 61, 156));
+}
+.cen {
+    text-align: center;
+}
