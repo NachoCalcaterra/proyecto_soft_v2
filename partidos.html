@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Administración Financiera - Club Sportivo Bombal</title>
+    <title>Partidos - Club Sportivo Bombal</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="styles.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
@@ -37,61 +37,61 @@
     </nav>
 
     <div class="container mt-4">
-        <h2>Administración Financiera</h2>
-        <div class="row">
+        <h2>Partidos</h2>
+        <div class="row mb-4">
             <div class="col-md-6">
-                <form id="income-form">
-                    <div class="form-group">
-                        <label for="income-description">Descripción del Ingreso:</label>
-                        <input type="text" class="form-control" id="income-description" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="income-amount">Monto:</label>
-                        <input type="number" class="form-control" id="income-amount" required step="0.01">
-                    </div>
-                    <button type="button" class="btn btn-success" onclick="addIncome()">Agregar Ingreso</button>
-                </form>
+                <h4>Filtrar por Fecha</h4>
+                <!-- cuenta con un calendario para filtrar por fecha (input) -->
+                <input type="date" class="form-control" id="filter-date" onchange="filterMatches()">
             </div>
-            <div class="col-md-6">
-                <form id="expense-form">
-                    <div class="form-group">
-                        <label for="expense-description">Descripción del Gasto:</label>
-                        <input type="text" class="form-control" id="expense-description" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="expense-amount">Monto:</label>
-                        <input type="number" class="form-control" id="expense-amount" required step="0.01">
-                    </div>
-                    <button type="button" class="btn btn-danger" onclick="addExpense()">Agregar Gasto</button>
-                </form>
-            </div>
+        </div>
+        <div id="match-list">
+            <h4 class="mt-4">Lista de Partidos</h4>
         </div>
         <div class="mt-4">
-            <h4>Resumen Financiero</h4>
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Ingresos Totales: <span id="total-income">$0.00</span></h5>
-                    <h5 class="card-title">Gastos Totales: <span id="total-expense">$0.00</span></h5>
-                    <h5 class="card-title">Balance: <span id="balance">$0.00</span></h5>
+            <h4>Agregar Partido</h4>
+            <form id="match-form">
+                <div class="form-group">
+                    <label for="match-date">Fecha del Partido:</label>
+                    <!-- cuenta con un calendario para elegir la fecha del partido -->
+                    <input type="date" class="form-control" id="match-date" required>
                 </div>
-            </div>
-        </div>
-        <div id="income-list" class="mt-4">
-            <h5>Ingresos</h5>
-        </div>
-        <div id="expense-list" class="mt-4">
-            <h5>Gastos</h5>
+                <div class="form-group">
+                    <label for="match-opponent">Rival:</label>
+                    <input type="text" class="form-control" id="match-opponent" required>
+                </div>
+                <div class="form-group">
+                    <label for="match-stadium">Estadio:</label>
+                    <input type="text" class="form-control" id="match-stadium" required>
+                </div>
+                <div class="form-group">
+                    <label for="match-time">Hora:</label>
+                    <!-- cuenta con un reloj para elegir la hora del partido -->
+                    <input type="time" class="form-control" id="match-time" required>
+                </div>
+                <div class="form-group">
+                    <label for="match-result">Resultado:</label>
+                    <!-- podemos elejir el resultado del partido por medio de un select y options -->
+                    <select class="form-control" id="match-result">
+                        <option value="">Selecciona un resultado</option>
+                        <option value="ganado">Ganado</option>
+                        <option value="perdido">Perdido</option>
+                        <option value="empatado">Empatado</option>
+                    </select>
+                </div>
+                <button type="button" class="btn btn-primary" onclick="addMatch()">Agregar Partido</button>
+            </form>
         </div>
     </div>
+    
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="script.js"></script>
     <script>
         window.onload = () => {
-            renderFinancialSummary();
-            renderIncomes();
-            renderExpenses();
+            renderMatches();
         };
     </script>
 </body>
